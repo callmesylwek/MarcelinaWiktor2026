@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Walentynka 💘</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #ffe6ee;
+            text-align: center;
+            padding: 40px;
+        }
+
+        img {
+            max-width: 300px;
+            margin: 20px 0;
+            border-radius: 12px;
+        }
+
+        button {
+            padding: 12px 25px;
+            margin: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .tak {
+            background-color: #ff4d6d;
+            color: white;
+        }
+
+        .nie {
+            background-color: #ccc;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- EKRAN STARTOWY -->
+    <div id="start">
+        <h1>💘 Czy zostaniesz moją walentynką? 💘</h1>
+        <img src="willyoubemine.jpg" alt="grafika startowa">
+        <br>
+        <button class="tak" onclick="pokazTak()">Tak</button>
+        <button class="nie" onclick="pokazNie()">Nie</button>
+    </div>
+
+    <!-- EKRAN NIE -->
+    <div id="nie" class="hidden">
+        <h2>Miss click?...</h2>
+        <img src="whynot.jpg" alt="grafika nie">
+        <br>
+        <button onclick="reset()">Spróbuj ponownie</button>
+    </div>
+
+    <!-- EKRAN TAK -->
+    <div id="tak" class="hidden">
+        <h2>HELL YEAHHHHHH</h2>
+        <img src="hellyeah.jpg" alt="grafika tak">
+        <p>
+            <!-- TU WPISZ SWÓJ TEKST -->
+            14.02.2026 Pierw do kawiarni później do mnie?
+        </p>
+    </div>
+
+    <script>
+        function pokazNie() {
+            document.getElementById("start").classList.add("hidden");
+            document.getElementById("nie").classList.remove("hidden");
+        }
+
+        function pokazTak() {
+            document.getElementById("start").classList.add("hidden");
+            document.getElementById("tak").classList.remove("hidden");
+        }
+
+        function reset() {
+            document.getElementById("nie").classList.add("hidden");
+            document.getElementById("start").classList.remove("hidden");
+        }
+    </script>
+
+</body>
+</html>
